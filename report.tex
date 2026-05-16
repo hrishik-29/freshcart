@@ -1,0 +1,295 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{geometry}
+\usepackage{float}
+\usepackage{pdfpages}
+\usepackage{titlesec}
+\usepackage{subcaption}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+
+\geometry{a4paper, margin=1in}
+
+% Moderate line spacing
+\setstretch{1.15}
+
+% Standardized Heading sizes mapping the reference template
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries\itshape}{\thesubsubsection}{1em}{}
+
+% Header and Footer styling
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{HCI End Semester Design Activity}
+\fancyhead[R]{FreshCart UI/UX Analysis}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.6pt}
+
+\begin{document}
+
+% -------------------------
+% TITLE PAGE
+% -------------------------
+\begin{titlepage}
+    \centering
+    \vspace*{1in}
+    
+    % Logo above the lines
+    \includegraphics[width=0.45\textwidth]{IIITDM-Logo.jpeg}\par
+    \vspace{2cm}
+    
+    % Lines sandwiching the Course and Project Name
+    \hrule
+    \vspace{1cm}
+    {\Large \bfseries FreshCart: Online Grocery Application\par}
+    \vspace{0.5cm}
+    {\large \itshape Human-Computer Interaction (HCI) End Semester Design Activity\par}
+    \vspace{1cm}
+    \hrule
+    
+    \vspace{3.5cm}
+    
+    % Name and Roll number
+    {\large 
+    \textbf{Name:} GADDAM HRISHIK REDDY\\[0.3cm]
+    \textbf{Roll Number:} CS23B1083\par
+    }
+    \vspace{1cm}
+    {\large \today\par}
+
+\end{titlepage}
+
+\pagenumbering{roman}
+\tableofcontents
+\newpage
+\listoffigures
+\newpage
+
+\pagenumbering{arabic}
+
+% -------------------------
+% 1. INTRODUCTION
+% -------------------------
+\section{Introduction}
+\subsection{Project Overview}
+FreshCart is a fully functional online grocery application. The main goal of this project is to build an interactive website that puts into practice the Human-Computer Interaction (HCI) concepts we learned in class. Instead of just designing static screens, I wanted to build a working system that focuses on giving users control, making the site easy to learn, avoiding mental overload, and ensuring it is accessible to everyone.
+
+\subsection{Objective and Scope}
+To make an e-commerce app that people actually want to use, it has to be more than just visually appealing. In FreshCart, I tried to bridge the gap between classroom theories—like Gestalt psychology, Fitts's Law, Shneiderman's Eight Golden Rules, and Nielsen's Heuristics—and actual web development. I also used the \textbf{Vital Few (80-20 Rule)}, meaning I focused most of my effort on the core 20\% of features (like searching and checkout) that make up 80\% of the actual shopping experience. By following standard \textbf{Web Usability Guidelines}, the design matches what users already expect. Thanks to the \textbf{Law of Learning}, this means users won't need to spend any time figuring out how to use the app because it already feels familiar to them.
+
+% -------------------------
+% 2. PRODUCT DETAIL PAGE
+% -------------------------
+\section{Singular Item Evaluation and Conversion Optimization}
+The product detail page is where the user decides whether or not to buy an item. It is important that this page clearly shows what the product is and how much it costs, without cluttering the screen with too much text.
+
+\subsection{Information Architecture via Dual-Coding Theory}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{images/product_details-1.png}
+    \caption{Product Detail page using Dual-Coding frameworks}
+\end{figure}
+Relying just on text to describe an item is usually not enough for users to remember it. FreshCart fixes this by using the \textbf{Dual-Coding Theory}. The page layout follows basic \textbf{Visual Design principles of Balance, Scale, and Dominance}. A large, high-quality image of the food acts as the main focal point (Dominance and Scale), which is balanced out by the clean text and pricing on the right side (Balance). This means when a user reads "Fresh Red Apple," their brain easily links the text directly to the large image, making the shopping experience much smoother.
+
+\subsection{Progressive Disclosure and Direct Manipulation Mechanics}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{images/product_details-2.png}
+    \caption{Extra details hidden using Progressive Disclosure}
+\end{figure}
+Reading through huge blocks of text, like nutritional info or farming details, can be exhausting. To keep the screen clean, FreshCart uses \textbf{Progressive Disclosure}. Extra information is hidden behind "View More" dropdowns so it doesn't distract the user from the "Add to Cart" button. Also, when users want to change the quantity of an item, the app uses \textbf{Interaction Design Paradigms} based on \textbf{Direct Manipulation}. Instead of typing a number or using a clunky dropdown menu, the user just taps the native (+) and (-) buttons to directly change the amount.
+
+% -------------------------
+% 3. CHECKOUT AND PROGRESSION
+% -------------------------
+\section{Checkout Progressions and Form Validation}
+The checkout process is usually where most users get frustrated and abandon their carts. To prevent this, the checkout needs to be easy to understand, catch mistakes early, and keep the user motivated to finish.
+
+\subsection{Segmented Checkout and Gestalt Continuation}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{images/checkout.png}
+    \caption{Multi-step checkout mapping Gestalt continuity}
+\end{figure}
+Long, complicated forms can look really intimidating. To solve this, the checkout uses \textbf{Segmented Closure}. The process is broken down into three simple, separate steps. The numbered progress bar at the top uses the \textbf{Gestalt Principle of Continuation}, guiding the user's eye from left to right. When a user finishes a step, it gives them a sense of closure and encourages them to keep going to the next phase.
+
+\subsection{Form Validation and Error Prevention Design}
+Following \textbf{Shneiderman's Design Principles}, the checkout form is built heavily around active Error Prevention. The input fields have strict rules coded into them. For example, if a user accidentally types letters into the phone number box or tries to skip a required field, the system stops them immediately. It highlights the mistake in red and clearly explains what went wrong, which prevents broken data from causing a bigger crash later on.
+
+% -------------------------
+% 4. USER CONTROL AND TRACKING
+% -------------------------
+\section{Internal Locus of Control and System Tracking}
+After a user places an order, it is important to keep them informed and give them options to change their settings so they feel safe and in command.
+
+\subsection{Profile Customization Architectures}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/profile.png}
+    \caption{User Profile Dashboard supporting an Internal Locus of Control}
+\end{figure}
+Users usually dislike apps that don't let them change their preferences. To create a strong \textbf{Internal Locus of Control}, the Profile page gives the user plenty of control over their account. They can easily toggle specific settings, like dietary restrictions or notification preferences. This provides a lot of \textbf{Flexibility}, allowing the app to adapt specifically to how each user wants to shop.
+
+\subsection{Timeline Metaphors and System Status}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/tracking.png}
+    \caption{Visual order tracking providing Visibility of System Status}
+\end{figure}
+Right after checking out, the order tracking page gives the user clear \textbf{Visibility of System Status} and shows \textbf{Robustness} when handling live updates. Instead of just showing boring text like "Processing", FreshCart uses a visual timeline that matches common real-world \textbf{Mental Models} for food delivery. This way, users always know exactly where their groceries are without being left in the dark.
+
+% -------------------------
+% 5. UNIVERSAL DESIGN AND SUPPORT
+% -------------------------
+\section{Universal Design Validation and Support Mechanisms}
+Good design needs to take different physical abilities into account. The FreshCart project was built with the Seven Principles of \textbf{Universal Design} right from the start.
+
+\subsection{Architectural Implementation of User Support Systems}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{images/help.png}
+    \caption{Help page built with explicit shortcut categorization}
+\end{figure}
+FreshCart features a dedicated Help page based on standard \textbf{User Support Systems Principles}. Instead of a massive wall of text that is hard to read, the FAQs are grouped into collapsible sections. Users only click on what they actually need help with, which prevents information overload and makes finding solutions much faster.
+
+\subsection{Equitable Use and Perceptible Parameters}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{images/accessibility-1.png}
+    \caption{Range sliders for changing UI text sizes}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{images/accessibility-2.png}
+    \caption{Color-blind filters adjusting the visual spectrum}
+\end{figure}
+I also paid close attention to \textbf{Shapes and Colors Psychology}. I used rounded, friendly shapes for the buttons so they look safe to click, and reserved bold red colors exclusively for errors. To make sure the app offers \textbf{Equitable Use} for everyone, including people with vision problems, I added accessibility features. Users can use a simple slider to make the text larger, or toggle on High Contrast and Color-blind modes to make the interface much easier to read.
+
+% -------------------------
+% 6. MIDSEM ENHANCEMENTS
+% -------------------------
+\section{Enhanced Midsem features}
+During the midterm evaluation, I only made static Figma wireframes for the Home Page, Search, and Cart. For the final project, I completely rebuilt these static ideas into a working website. Here are the specific improvements and HCI updates I made to those original midsem concepts.
+
+\subsection{Home Architecture Enhancements}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{images/homepage-1.png}
+    \caption{Hero Section using the Inverted Pyramid layout}
+\end{figure}
+The Home screen is organized using the \textbf{Inverted Pyramid} structure, meaning the most important things (like the big search bar) are right at the top. The layout also naturally aligns with \textbf{F-Pattern Scanning}, meaning users read horizontally across the top navigation and then down the left side. I also added click-able breadcrumbs in the navigation bar to follow \textbf{Navigation Design Guidelines}, making sure users always have an easy way back to the home screen if they get lost.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{images/homepage-2.png}
+    \caption{Navigation circles optimized for Hick's Law}
+\end{figure}
+To follow \textbf{Hick's Law}, I replaced the old boring text menus from the midsem with visual, circular buttons for each food category. This limits the number of choices a user has to read through, making it much faster for their brain to decide where to click.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{images/homepage-3.png}
+    \caption{Flash Deals driven by Persuasion Psychology}
+\end{figure}
+The scrolling deals section now uses \textbf{Persuasion Psychology principles}. I put bright red countdown timers to create a sense of \textbf{Scarcity} (making people want to buy before time runs out), and I added labels that show how many other people bought the item to build \textbf{Social Proof}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{images/homepage-4.png}
+    \caption{Bottom Navigation following Fitts's Law}
+\end{figure}
+For mobile screens, the bottom menu was designed around the \textbf{Serial Position Effect}. Research shows people remember the first item (\textbf{Primality}) and the last item (\textbf{Recency}) best, so I made sure the "Home" button is first on the left, and the "Profile" button is last on the right.
+
+\subsection{Interactive Search and Discovery Enhancements}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{images/search-1.png}
+    \caption{Live search using Recognition cues}
+\end{figure}
+Following \textbf{Nielsen's guidelines} on Recognition over Recall, the search bar now auto-completes as you type and shows pictures of the groceries. This saves the user from having to remember the exact spelling of what they are looking for.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{images/search-2.png}
+    \caption{Filter chips avoiding long scrolling pages}
+\end{figure}
+To make filtering easier, I used horizontal scroll chips instead of a massive vertical checklist. Also, keeping in mind \textbf{Miller's Law (\textbf{Vital Few $\pm$ limits})}, I made sure not to offer too many filtering options at once so the user doesn't get overwhelmed.
+
+\subsection{Cart Enhancements and Feedback Validations}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{images/cart-1.png}
+    \caption{Cart interface saving data automatically}
+\end{figure}
+Based on \textbf{Asimov’s Laws} (which suggest a system shouldn't let a user's progress get destroyed by an accident), the cart is now programmed to save automatically. If a user accidentally refreshes the page, their heavy \textbf{Learnability} investment isn't lost because the items stay safely in the cart.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/toast.png}
+    \caption{Pop-up notifications showing Informative Feedback}
+\end{figure}
+Finally, to satisfy Shneiderman's rule to "Offer Informative Feedback," the app now shows little pop-up messages at the top right whenever you do something (like adding an apple to the cart). These pop-ups also have an "UNDO" button, allowing users to easily fix mistakes without getting frustrated.
+
+% -------------------------
+% 7. ADVANCED COGNITIVE FRAMEWORKS
+% -------------------------
+\section{Advanced Cognitive Frameworks and Micro-Interactions}
+In addition to the basics, the FreshCart website uses a few more advanced psychological tricks to make the experience feel high-quality and keep users moving toward the checkout.
+
+\subsection{The Von Restorff Effect (Isolation Effect)}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{images/product_details-1.png}
+    \caption{The Von Restorff Effect on the Add to Cart button}
+\end{figure}
+When a bunch of items look similar, the one piece that looks completely different is the one people notice first. FreshCart uses the \textbf{Von Restorff Effect (Isolation Effect)} on its main buttons. Because most of the website is white and visually calm, the bright green "Add to Cart" and "Checkout" buttons really pop out. This isolation grabs the user's attention right away, so they never have to guess where they need to click next.
+
+\subsection{The Zeigarnik Effect and Funnel Optimization}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{images/checkout.png}
+    \caption{The Zeigarnik Effect used in the checkout process}
+\end{figure}
+To keep people from abandoning their carts right before paying, the checkout relies on the \textbf{Zeigarnik Effect}. This concept says that people tend to obsess over uncompleted tasks more than finished ones. By putting a very obvious "Step 1 of 3" numbered tracker on the screen, the user immediately feels like they have started a task. This creates a psychological urge to finish all the steps just to get closure. This is further supported by the \textbf{Goal-Gradient Effect}, which states that as people get closer to finishing a goal, they speed up their efforts. Finally, finishing the checkout ends with a highly celebratory confirmation screen, leveraging the \textbf{Peak-End Rule} to ensure the user's final memory of the app is overwhelmingly positive. 
+
+\subsection{Skeuomorphism, Affordances, and the Aesthetic-Usability Effect}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{images/homepage-2.png}
+    \caption{Shadows and hovers acting as Affordances and Signifiers}
+\end{figure}
+It shouldn't be confusing to tell what is a clickable button and what is just plain text. To fix this, the app uses \textbf{Skeuomorphism} combined with Don Norman’s ideas of \textbf{Affordance} and \textbf{Signifiers}. Skeuomorphism is when digital items are designed to look like real-world physical objects. By adding subtle drop-shadows under the buttons, they look like elevated 3D physical switches that you can actually press down (Affordance). When you hover your mouse over them, they change color slightly (a Signifier) to show that the system is responding to your cursor. 
+
+Overall, by keeping the colors clean, fonts easy to read, and spacing consistent, the whole application takes advantage of the \textbf{Aesthetic-Usability Effect}. Since the website looks very modern and pleasing to the eye, users naturally tend to think it works perfectly, often forgiving any minor bugs just because the design feels high-quality.
+
+% -------------------------
+% 8. CONCLUSION
+% -------------------------
+\section{Conclusion}
+FreshCart is a huge step up from a normal, static prototype. By continuously testing and improving the design from the initial wireframes up to a fully working website, the final product is very stable and easy to use. By using so many cognitive principles—like Hick's Law, Gestalt grouping, Progressive Disclosure, and strict Error Prevention—FreshCart successfully removes almost all the annoying frustrations that people usually face when shopping online.
+
+\vspace{1.5cm}
+\begin{center}
+    \textbf{\Large Live Application Access:} \\[0.4cm]
+    The fully functional, interactive web application resulting from this design activity has been permanently deployed for evaluative grading purposes. It is publicly accessible via the following URL: \\[0.4cm]
+    \href{https://cs23b1083-hci.netlify.app}{\underline{\textbf{\large https://cs23b1083-hci.netlify.app}}}
+\end{center}
+
+\newpage
+\begin{center}
+    \vspace*{3.5in}
+    {\Huge \bfseries MID SEM REPORT\par}
+\end{center}
+\newpage
+
+\appendix
+% INSTRUCTION FOR COMPILATION: 
+% Make sure CS23B1083_HCI_Midsem.pdf is uploaded to your Overleaf project
+\includepdf[pages=-, addtotoc={1,section,1,Appendix A: Midsem Report Deliverable,appendixa}]{CS23B1083_HCI_Midsem.pdf}
+
+\end{document}

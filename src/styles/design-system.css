@@ -1,0 +1,168 @@
+/* ============================================
+   FreshCart Design System
+   Color Psychology: Green = fresh/healthy/trust
+   Typography: Inter - clean, modern, highly readable
+   ============================================ */
+
+:root {
+  /* ---- Primary Colors (Green = freshness, health, trust) ---- */
+  --color-primary-50: #ecfdf5;
+  --color-primary-100: #d1fae5;
+  --color-primary-200: #a7f3d0;
+  --color-primary-300: #6ee7b7;
+  --color-primary-400: #34d399;
+  --color-primary-500: #10b981;
+  --color-primary-600: #059669;
+  --color-primary-700: #047857;
+  --color-primary-800: #065f46;
+  --color-primary-900: #064e3b;
+
+  /* ---- Accent / CTA (Orange = energy, action, urgency) ---- */
+  --color-accent-400: #fb923c;
+  --color-accent-500: #f97316;
+  --color-accent-600: #ea580c;
+
+  /* ---- Danger (Red = warning, delete, urgency) ---- */
+  --color-danger-400: #f87171;
+  --color-danger-500: #ef4444;
+  --color-danger-600: #dc2626;
+
+  /* ---- Warning (Yellow) ---- */
+  --color-warning-400: #facc15;
+  --color-warning-500: #eab308;
+
+  /* ---- Info (Blue) ---- */
+  --color-info-400: #60a5fa;
+  --color-info-500: #3b82f6;
+
+  /* ---- Neutrals ---- */
+  --color-neutral-50: #fafafa;
+  --color-neutral-100: #f5f5f5;
+  --color-neutral-200: #e5e5e5;
+  --color-neutral-300: #d4d4d4;
+  --color-neutral-400: #a3a3a3;
+  --color-neutral-500: #737373;
+  --color-neutral-600: #525252;
+  --color-neutral-700: #404040;
+  --color-neutral-800: #262626;
+  --color-neutral-900: #171717;
+
+  /* ---- Semantic Colors ---- */
+  --color-bg: #ffffff;
+  --color-bg-secondary: #f8faf9;
+  --color-bg-card: #ffffff;
+  --color-text-primary: #171717;
+  --color-text-secondary: #525252;
+  --color-text-muted: #a3a3a3;
+  --color-border: #e5e5e5;
+  --color-shadow: rgba(0, 0, 0, 0.08);
+  --color-overlay: rgba(0, 0, 0, 0.5);
+
+  /* ---- Typography Scale ---- */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-size-xs: 0.75rem;    /* 12px */
+  --font-size-sm: 0.875rem;   /* 14px */
+  --font-size-base: 1rem;     /* 16px */
+  --font-size-lg: 1.125rem;   /* 18px */
+  --font-size-xl: 1.25rem;    /* 20px */
+  --font-size-2xl: 1.5rem;    /* 24px */
+  --font-size-3xl: 1.875rem;  /* 30px */
+  --font-size-4xl: 2.25rem;   /* 36px */
+  --font-size-5xl: 3rem;      /* 48px */
+
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  /* ---- Spacing Scale ---- */
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+
+  /* ---- Border Radius (Rounded = friendly, approachable - Shape Psychology) ---- */
+  --radius-sm: 0.375rem;   /* 6px */
+  --radius-md: 0.5rem;     /* 8px */
+  --radius-lg: 0.75rem;    /* 12px */
+  --radius-xl: 1rem;       /* 16px */
+  --radius-2xl: 1.5rem;    /* 24px */
+  --radius-full: 9999px;
+
+  /* ---- Shadows (Gestalt: Common Region via subtle depth) ---- */
+  --shadow-sm: 0 1px 2px var(--color-shadow);
+  --shadow-md: 0 4px 6px -1px var(--color-shadow), 0 2px 4px -2px var(--color-shadow);
+  --shadow-lg: 0 10px 15px -3px var(--color-shadow), 0 4px 6px -4px var(--color-shadow);
+  --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1);
+
+  /* ---- Transitions (Micro-animations for engagement) ---- */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 350ms ease;
+  --transition-spring: 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ---- Z-indices ---- */
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-modal: 300;
+  --z-toast: 400;
+  --z-tooltip: 500;
+
+  /* ---- Layout ---- */
+  --max-width: 1280px;
+  --navbar-height: 70px;
+
+  /* ---- Font size multiplier for accessibility ---- */
+  --font-scale: 1;
+}
+
+/* ---- Dark Mode Theme ---- */
+[data-theme="dark"] {
+  --color-bg: #0f1110;
+  --color-bg-secondary: #1a1f1d;
+  --color-bg-card: #1e2422;
+  --color-text-primary: #f0fdf4;
+  --color-text-secondary: #a3a3a3;
+  --color-text-muted: #737373;
+  --color-border: #2d3532;
+  --color-shadow: rgba(0, 0, 0, 0.3);
+  --color-overlay: rgba(0, 0, 0, 0.7);
+}
+
+/* ---- High Contrast Mode (Universal Design) ---- */
+[data-contrast="high"] {
+  --color-text-primary: #000000;
+  --color-text-secondary: #1a1a1a;
+  --color-border: #000000;
+  --color-bg: #ffffff;
+  --color-bg-card: #ffffff;
+}
+[data-theme="dark"][data-contrast="high"] {
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #e0e0e0;
+  --color-border: #ffffff;
+  --color-bg: #000000;
+  --color-bg-card: #111111;
+}
+
+/* ---- Color Blind Friendly ---- */
+[data-colorblind="true"] {
+  --color-primary-500: #2563eb;
+  --color-primary-600: #1d4ed8;
+  --color-danger-500: #c026d3;
+  --color-danger-600: #a21caf;
+  --color-accent-500: #ea580c;
+}
